@@ -7,7 +7,7 @@
 * this program prints "Programming is positive, zero, or negative
 * Return: 0
 */
-int main()
+int main(void)
 {
 int n1 = 0, n2;
 while (n1 <= 99)
@@ -34,5 +34,5 @@ while (n1 <= 99)
 	++n1;
 }
 putchar('\n');
-return 0;
+return (0);
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 /**
 * main - print if the number is postive, zero, or negative
 *
@@ -9,29 +10,35 @@
 */
 int main(void)
 {
-	int n1 = 0, n2;
-	while (n1 <= 99)
-	{
-		n2 = n1;
-		while(n2 <= 99)
-		{
-			if (n2 != n1)
-			{
-				putchar((n1 / 10) + 48);
-				putchar((n1 % 10) + 48);
-				putchar(' ');
-				putchar((n2 / 10) + 48);
-				putchar((n2 % 10) + 48);
-				if(n1 != 98 || n2 != 99)
-				{
-					putchar(',');
-					putchar(' '); 
-				} 
-			}
-			++n2;
-		}
-		++n1;
-	}
-	putchar('\n');
-	return (0);
+
+int num1, num2;
+
+for(num1 = 0; num1 <= 98; num1++)
+
+{
+
+for(num2 = num1 + 1; num2 <= 99; num2++)
+		
+{
+
+putchar((num1 / 10) + 0);
+putchar((num1 % 10) + 0);
+putchar(' ');
+putchar((n2 / 10) + 0);
+putchar((n2 % 10) + 0);
+
+if(num1 != 98 && num2 == 99)
+		
+continue;
+
+putchar(',');
+putchar(' '); 
+
+} 
+
+}
+
+putchar('\n');
+
+return (0);
 }

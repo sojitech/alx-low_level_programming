@@ -6,12 +6,12 @@
 */
 int main(void)
 {
-double inc;
+long inc;
 int n1 = 0, n2 = 1, n3;
 for (inc = 0; inc < 98; inc++)
 {
 n3 = n1 + n2;
-printf("%lf", n3);
+printf("%li", n3);
 n1 = n2;
 n2 = n3;
 

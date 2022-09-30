@@ -1,57 +1,50 @@
 #include "main.h"
 
 /**
- *evaluate_num - recursion loop
- *@num: num
- *@iterator: number to iterate
- *Return: return 1 or 0
+ * _strlen_recursion - size
+ * @s: pointer to string params
+ * Return: recursion
  */
 
-int evaluate_num(int num, int iterator)
+int _strlen_recursion(char *s)
 {
-
-if (iterator == num - 1)
-{
-return (1);
-}
-
-else if (num % iterator == 0)
-{
-return (0);
-}
-
-if (num % iterator != 0)
-{
-return (evaluate_num(num, iterator + 1));
-}
-
-return (0);
-
+	if (!*s)
+	{
+		return (0);
+	}
+	return (1 + _strlen_recursion(++s));
 }
 
 /**
- *is_prime_number - evaluate prime or not
- *@num: number
- *Return: return 1 prime - return 0 otherwise
+ * p1 - palindrome
+ * @s: pointer to string
+ * @l: position
+ * Return: boolena
  */
 
-int is_prime_number(int num)
+int p1(char *s, int l)
 {
+	if (l < 1)
+	{
+		return (1);
+	}
 
-int iterator;
-
-iterator = 2;
-
-/* only greater than 2*/
-if (num < 2)
-{
-return (0);
+	if (*s == *(s + l))
+	{
+		return (p1(s + 1, l - 2));
+	}
+	return (0);
 }
 
-if (num == 2)
-{
-return (1);
-}
+/**
+ * is_palindrome - palindrome
+ * @s: pointer to string
+ * Return: recursion
+ */
 
-return (evaluate_num(num, iterator));
+int is_palindrome(char *s)
+{
+	int len = _strlen_recursion(s);
+
+	return (p1(s, len - 1));
 }
